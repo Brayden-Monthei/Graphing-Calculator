@@ -308,9 +308,6 @@ def plot_function():
     except Exception as e:
         messagebox.showerror("Graph Error", f"Could not plot function(s):\n{e}")
 
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
 def setup_empty_graph():
     fig = Figure(figsize=(6, 4), dpi=100)  # Match plot_function dimensions
     ax = fig.add_subplot(111)
@@ -325,7 +322,7 @@ def setup_empty_graph():
     for widget in graph_canvas.winfo_children():
         widget.destroy()
 
-    canvas = FigureCanvasTkAgg(fig, master=graph_canvas)  # Important: use FigureCanvasTkAgg
+    canvas = FigureCanvas(fig, master=graph_canvas)  # Important: use FigureCanvasTkAgg
     canvas.draw()
     canvas.get_tk_widget().pack(side="top", fill="both", expand=True)
 
