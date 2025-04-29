@@ -879,7 +879,7 @@ pi_button = ctk.CTkButton(master=root, text='π', command=insert_pi, text_color=
                           fg_color=button_color)
 pi_button.place(x=145, y=315)
 
-equal_button = ctk.CTkButton(master=root, text="=", command=lambda e: insert_char("="), text_color=button_text_color,
+equal_button = ctk.CTkButton(master=root, text="=", command=lambda: insert_char("="), text_color=button_text_color,
                              fg_color=button_color, height=30, width=30)
 equal_button.place(x=205, y=195)
 
